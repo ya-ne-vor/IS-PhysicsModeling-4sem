@@ -14,7 +14,7 @@ function MyFunction(){
     var x = [];
     var y = [];
     var z = [];
-    var c = [];
+    var _color = [];
 
     var Radius = SpeedCharge/(AmountCharge * Induction * Math.cos(AngleBetween * Math.PI / 180)); // радиус движения частицы
     var Deviation = SpeedCharge * ((1/30)/(SpeedCharge * Math.cos(AngleBetween * Math.PI / 180) / Radius)) * Math.sin(AngleBetween * Math.PI / 180);
@@ -26,7 +26,7 @@ function MyFunction(){
         x.push(Radius * Math.cos(i * chargeSign / 30));
         y.push(Radius * Math.sin(i * chargeSign / 30));
         z.push(i * chargeSign * Deviation);
-        c.push(i * 10)
+        _color.push(i * 10)
     }
 
     // использую библиотеку для 3d изуализации, придания линии цвета и т.д.
@@ -39,7 +39,7 @@ function MyFunction(){
         opacity: 1,
         line: {
             width: 10,
-            color: c,
+            color: _color,
             colorscale: 'Rainbow'}
     }]);
 
