@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../library/plotly.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        input[type="number"] {
+            width: 250px;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 2px;
+            border: 2px solid #ccc;
+            font-size: 12px;
+            color: #343a40;
+            background-color: #f8f9fa;
+        }
+        input[type="submit"] {
+            width: 100px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+<form id = "main-form" onsubmit="return MyFunction(this)" method ="post">
+    <!--вход.данные: величина и знак заряда, величина магнитной индукции, скорость, угол между ветором скорости и вектором индукции-->
+    <!--F_л=q_0*B*V*sin(alpha)-->
+    <label>Величина заряда:</label>
+    <input  id="AmountCharge" placeholder="Введите величину заряда" style="color: #343a40;">
+    <br><br>
+
+    <label>Знак заряда:</label>
+    <input id="ChargeSign" placeholder="Введите знак заряда" style="color: #343a40;">
+    <br><br>
+
+    <label>Величина индукции:</label>
+    <input id="Induction" placeholder="Введите величину индукции" style="color: #343a40;">
+    <br><br>
+
+    <label>Скорость заряда:</label>
+    <input id="SpeedCharge" placeholder="Введите скорость заряда" style="color: #343a40;">
+    <br><br>
+
+    <label>Угол между ветором скорости и вектором индукции:</label>
+    <input id="AngleBetween" placeholder="Введите величину угла (0-180)" style="color: #343a40;">
+    <br><br>
+
+
+    <input type="submit" name="submit" value="Готово">
+</form>
+
+
+<div id="myDiv"></div>
+<script src="LorentzForce.js"></script>
+</body>
+
+</html>
