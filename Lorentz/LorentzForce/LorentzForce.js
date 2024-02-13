@@ -15,7 +15,7 @@ function MyFunction(){
     var Radius = SpeedCharge/(AmountCharge * Induction * Math.cos(AngleBetween * Math.PI / 180)); // радиус движения частицы
     var Deviation = SpeedCharge * ((1/30)/(SpeedCharge * Math.cos(AngleBetween * Math.PI / 180) / Radius)) * Math.sin(AngleBetween * Math.PI / 180);
 
-    var pointCount = 300;
+    var pointCount = 1000;
 
     var x = [];
     var y = [];
