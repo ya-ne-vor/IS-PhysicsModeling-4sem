@@ -11,16 +11,15 @@ function MyFunction(){
 
     var chargeSign = (ChargeSign === 'neg') ? -1 : 1;
 
+    var x = [];
+    var y = [];
+    var z = [];
+    var c = [];
 
     var Radius = SpeedCharge/(AmountCharge * Induction * Math.cos(AngleBetween * Math.PI / 180)); // радиус движения частицы
     var Deviation = SpeedCharge * ((1/30)/(SpeedCharge * Math.cos(AngleBetween * Math.PI / 180) / Radius)) * Math.sin(AngleBetween * Math.PI / 180);
 
     var pointCount = 1000;
-
-    var x = [];
-    var y = [];
-    var z = [];
-    var c = [];
 
     for(var i = 0; i < pointCount; i++)
     {
