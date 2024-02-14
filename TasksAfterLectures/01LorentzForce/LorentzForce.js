@@ -29,7 +29,6 @@ function MyFunction(){
         _color.push(i * 10)
     }
 
-    // использую библиотеку для 3d изуализации, придания линии цвета и т.д.
     Plotly.newPlot("myDiv", [{
         mode: 'lines',
         type: 'scatter3d',
