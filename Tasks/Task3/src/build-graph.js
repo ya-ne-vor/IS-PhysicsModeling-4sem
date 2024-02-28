@@ -192,7 +192,7 @@ function FunctionMagneticField(dataOfTheGraph) {
 
     Highcharts.chart('graph', {
         chart: {
-            backgroundColor: '#212529'
+            backgroundColor: '#000000'
         },
         title: {
             text: 'Линии магнитного поля в двумерном пространстве',
@@ -285,10 +285,10 @@ function FunctionMagneticField(dataOfTheGraph) {
 
 const defaultGraphData = {
     currents: [
-        {amperage: -1, coordinates: [30, 70]},
+        {amperage: -1, coordinates: [30, 30]},
         {amperage: 1, coordinates:  [30, 70]},
         {amperage: 1, coordinates: [70, 30]},
-        {amperage: -1, coordinates: [70, 30]},
+        {amperage: -1, coordinates: [70, 70]},
     ],
     vectorsCount: 60,
     vectorLength: 15,
