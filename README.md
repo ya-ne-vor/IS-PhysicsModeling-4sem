@@ -2,7 +2,7 @@
 
 Ссылка на задания после лекций:
 
-https://annagonos.github.io/IS-PhysicsModeling-4sem/
+[https://annagonos.github.io/IS-PhysicsModeling-4sem/](https://annagonos.github.io/IS-PhysicsModeling-4sem/)
 
 
 ## Задание №1. Вариант 1: 
