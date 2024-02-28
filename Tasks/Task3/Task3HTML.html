@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Задание после лекции №3</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/vector.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магнитное поле катушек Гельмгольца. Визуализация графика B(x)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background-color: #eeeeee;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #5496ff;
+        }
+
+        .container-fluid {
+            margin: 20px;
+        }
+
+        .row {
+            margin-bottom: 10px;
+        }
+
+        .col-lg-3 {
+            text-align: center;
+        }
+
+        .form-check-input {
+            margin-top: 8px;
+        }
+
+        .form-control {
+            margin-bottom: 10px;
+            background-color: #cbe2ff;
+            color: #000000;
+        }
+
+        .accordion-button {
+            background-color: #f7f0ff;
+            color: #1e80ff;
+        }
+
+        .accordion-collapse {
+            margin-top: 10px;
+        }
+
+        .btn {
+            margin-top: 10px;
+            background-color: #3474ff;
+            color: #ffffff;
+        }
+
+        #graph {
+            margin-top: 20px;
+        }
+
+        input[type="submit"] {
+            width: 350px;
+            height: 50px;
+            font-size: 18px;
+            background-color: #b7e1ff;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Задание к лекции. Вариант 1</h1>
+<h2>Магнитное поле катушек Гельмгольца. Визуализация графика B(x)</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+            <form id="graphForm">
+                <h3>Токи (расположение и величина): </h3>
+                <div class="row align-items-center">
+                    <div class="col-lg-1">
+                        <input class="form-check-input" type="checkbox" id="checkbox1" aria-label="..." checked disabled>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="amperage1" name="amperage" placeholder="#" value="-1" />
+                            <label for="amperage1">Сила тока (A)</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="coordinates1" name="coordinates" placeholder="#" value="30 30" />
+                            <label for="coordinates1">Координаты (x, y)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-lg-1">
+                        <input class="form-check-input" type="checkbox" id="checkbox2" aria-label="..." checked>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="amperage2" name="amperage" placeholder="#" value="1" />
+                            <label for="amperage2">Сила тока (A)</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="coordinates2" name="coordinates" placeholder="#" value="30 70" />
+                            <label for="coordinates2">Координаты (x, y)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-lg-1">
+                        <input class="form-check-input" type="checkbox" id="checkbox3" aria-label="..." checked>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="amperage3" name="amperage" placeholder="#" value="1" />
+                            <label for="amperage3">Сила тока (A)</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="coordinates3" name="coordinates" placeholder="#" value="70 30" />
+                            <label for="coordinates3">Координаты (x, y)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-lg-1">
+                        <input class="form-check-input" type="checkbox" id="checkbox4" aria-label="..." checked>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="amperage4" name="amperage" placeholder="#" value="-1" />
+                            <label for="amperage4">Сила тока (A)</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="coordinates4" name="coordinates" placeholder="#" value="70 30" />
+                            <label for="coordinates4">Координаты (x, y)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion" id="accord">
+
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accord">
+                        <div class="accordion-body">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" id="vectorsCount" name="vectorsCount" placeholder="#" value="60" />
+                                <label for="vectorsCount">Vectors count</label>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" id="vectorLength" name="vectorLength" placeholder="#" value="10" />
+                                <label for="vectorLength">Vector length</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="drawButton" data-mdb-ripple-init type="submit" class="btn btn-primary">
+                    Готово
+                </button>
+        </div>
+        <div class="col-lg-9" id="graph">
+            <script src="../Task3/src/build-graph.js"></script>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+</body>
+</html>
