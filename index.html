@@ -1,42 +1,221 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <style>
-        body {
-            font-family: "Times New Roman", sans-serif;
-            font-size: 20px;
-            padding: 50px;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-        input[type="number"] {
-            width: 500px;
-            padding: 20px;
-            box-sizing: border-box;
-            border-radius: 2px;
-            border: 2px solid #a9a9a9;
-            font-size: 20px;
-            color: #343a40;
-            background-color: #f8f8f8;
-        }
-        input[type="submit"] {
-            width: 350px;
-            height: 50px;
-            font-size: 18px;
-        }
-    </style>
-</head>
+    <meta charset="utf-8">
+    <title>Physics Course</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
 
+    <link rel="icon" href="images/atom_3767686.png">
+
+    <!-- JavaScript and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
 <body>
-<a href="Tasks/Task1/Task1HTML.html">Задание после лекции №1</a>
-<br><br>
-<a href="Tasks/Task2/Task2HTML.html">Задание после лекции №2</a>
-<br><br>
-<a href="Tasks/Task3/Task3HTML.html">Задание после лекции №3</a>
+
+<!-- Navbar -->
+<nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+        <img class="logo" src="./images/atom_3767686.png" /> ФОКиСТ
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#hero">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Задания после лекции</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Семинары</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End Navbar -->
+
+<section id="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Физические основы компьютерных и сетевых технологий</h1>
+                <p>Здесь собраны все мои работы со 2 семестра (2 курс 4 семестр) курса физики, а так же основная информация об оценивании.</p>
+                <br><button type="button" class="btn btn-dark btn-large">Подробнее</button>
+            </div>
+            <div class="col img-col">
+                <img src="./images/home_img.jpg" class="img-fluid" alt="Physics home page">
+            </div>
+        </div>
+
+        <div class="row cards justify-content-center">
+
+            <div class="col-md-5 d-flex justify-content-center">
+                <div class="card" style="width: 50rem;">
+                    <div class="card-body">
+                        <img src="./images/modeling.png" class="icon" alt="Service One"/>
+                        <h5 class="card-title">Задания после лекций</h5>
+                        <p class="card-text">Задания после лекций (вместо экзамена), <br> за каждое задание max по 2 балла.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 d-flex justify-content-center">
+                <div class="card" style="width: 50rem;">
+                    <div class="card-body">
+                        <img src="./images/homework_img.png" class="icon" alt="Service Two"/>
+                        <h5 class="card-title">Задачи с практик</h5>
+                        <p class="card-text">Планирую в дальнейшем добавить задачи с практик, <br> домашнюю работу.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- About us section -->
+<section id="about-us" style="margin-top: 50px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col">
+                <img src="./images/home-about_img.jpg" class="img-fluid" alt="About Us">
+            </div>
+            <div class="col text-col">
+                <h1>О курсе</h1>
+
+                <h3>Политика оценивания</h3>
+
+                <p> Лабораторные работы: 3*4=12 баллов + 2*4=8 баллов <br>
+                    Задачи на моделирование: 1*6=6 баллов + 1*6=6 баллов <br>
+                    Контрольная работа: 12 баллов + 12 баллов <br>
+                    Текущее тестирование (на каждой лекции): 8 + 6 баллов <br>
+                    Экзамен: 30 баллов<br>
+                    Дополнительные баллы
+
+                </p><br>
+                <p></p>
+                <a href="https://study.physics.itmo.ru/course/view.php?id=270" target="_blank" class="btn btn-dark btn-large rounded-pill">Ссылка на курс</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End About us section -->
+
+<!-- Projects section -->
+<section id="projects" style="margin-top: 50px;">
+    <div class="container">
+        <div class="row align-items-center projects">
+            <div class="col">
+                <h1>Задания после лекций</h1>
+                <p>Данный раздел содержит все задания после лекций. В каждом есть условие, решение и непосредственно визуализация.</p>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="card mb-3">
+                    <img src="./images/cardlab1_img.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">1. Магнитное поле в вакууме - Вариант 1</h5>
+                        <p class="card-text">Моделирование траектории движения заряда в магнитном поле.</p>
+
+                        <a href="Tasks/Task1/Task1HTML.html" target="_blank" class="btn btn-dark btn-large rounded-pill">Подробнее</a>
+                        <br><br>
+
+                        <p class="card-text"><small class="text-muted">Срок сдачи: среда, 14 февраля 2024, 23:59</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card mb-3">
+                    <img src="./images/cardlab2_img.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">2. Основные законы магнитостатики - Вариант 1</h5>
+                        <p class="card-text">Магнитное поле катушек Гельмгольца. Визуализация графика B(x).</p>
+
+                        <a href="Tasks/Task2/Task2HTML.html" target="_blank" class="btn btn-dark btn-large rounded-pill">Подробнее</a>
+                        <br><br>
+
+                        <p class="card-text"><small class="text-muted">Срок сдачи: среда, 21 февраля 2024, 16:00</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="card mb-3">
+                    <img src="./images/cardlab3_img.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">3. Магнитное поле в веществе - Вариант 1</h5>
+                        <p class="card-text">Моделирование магнитного поля, создаваемого прямыми токами. (с первой лекции).</p>
+
+                        <a href="Tasks/Task3/Task3HTML.html" target="_blank" class="btn btn-dark btn-large rounded-pill">Подробнее</a>
+                        <br><br>
+
+                        <p class="card-text"><small class="text-muted">Срок сдачи: среда, 28 февраля 2024, 23:59</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3">
+                    <img src="./images/cardlab1_img.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">4.  Магнетики. Электромагнитная индукция - Вариант 1</h5>
+                        <p class="card-text">Моделирование электрогенератора: вращение контура в магнитном поле. <br> Пока в разработке, еще не готово</p>
+
+                        <a href="https://study.physics.itmo.ru/course/view.php?id=270" target="_blank" class="btn btn-dark btn-large rounded-pill">Подробнее</a>
+                        <br><br>
+
+                        <p class="card-text"><small class="text-muted">Срок сдачи: вторник, 12 марта 2024, 23:59</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Projects section -->
+
+
+<!-- Contact section -->
+<section id="contact" style="margin-top: 50px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col">
+                <h1>Контакты</h1>
+                <h5>Гонос Анна M3204</h5>
+                <p>ITMO University  |  Software Engineering</p>
+
+            </div>
+        </div>
+    </div>
+    <a href="https://github.com/AnnaGonos/IS-PhysicsModeling-4sem" target="_blank" class="mr-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-github text-white" viewBox="0 0 16 16" >
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+        </svg>
+    </a>
+
+    <a href="https://t.me/gonosanna" target="_blank" class="mr-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-telegram text-white" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
+        </svg>
+    </a>
+
+</section>
+<!-- End Contact section -->
+
 
 </body>
 </html>
+

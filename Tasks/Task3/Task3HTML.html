@@ -1,195 +1,250 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Задание после лекции №3</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>Physics Course</title>
+    <script src="../../library/plotly.min.js" ></script>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" href="../../images/atom_3767686.png">
+    <!-- JavaScript and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
     <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/vector.js"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Магнитное поле катушек Гельмгольца. Визуализация графика B(x)</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 50px;
-            background-color: #eeeeee;
-            color: #333;
-        }
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Магнитное поле катушек Гельмгольца. Визуализация графика B(x)</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 50px;
+                background-color: #ffffff;
+                color: #333;
+            }
 
-        label {
-            display: block;
-            margin-bottom: 30px;
-            font-size: 14px;
-            color: #5496ff;
-        }
+            label {
+                display: block;
+                margin-bottom: 30px;
+                font-size: 14px;
+                color: #3b3b3b;
+            }
 
-        .container-fluid {
-            margin: 20px;
-        }
+            .container-fluid {
+                margin: 50px;
+            }
 
-        .row {
-            margin-bottom: 10px;
-        }
+            .row {
+                margin-bottom: 10px;
+            }
 
-        .col-lg-3 {
-            text-align: center;
-        }
+            .col-lg-3 {
+                text-align: center;
+            }
 
-        .form-check-input {
-            margin-top: 8px;
-        }
+            .form-check-input {
+                margin-top: 8px;
+            }
 
-        .form-control {
-            margin-bottom: 10px;
-            background-color: #cbe2ff;
-            color: #000000;
-        }
+            .form-control {
+                margin-bottom: 10px;
+                background-color: #f1e4ff;
+                color: #000000;
+            }
 
-        .accordion-button {
-            background-color: #f7f0ff;
-            color: #1e80ff;
-        }
+            .accordion-button {
+                background-color: #f7f0ff;
+                color: #683aa4;
+            }
 
-        .accordion-collapse {
-            margin-top: 10px;
-        }
+            .accordion-collapse {
+                margin-top: 10px;
+            }
 
-        .btn {
-            margin-top: 10px;
-            background-color: #3474ff;
-            color: #ffffff;
-        }
+            .btn {
+                margin-top: 10px;
+                background-color: #683aa4;
+                color: #ffffff;
+            }
 
-        #graph {
-            margin-top: 20px;
-        }
+            #graph {
+                margin-top: 20px;
+            }
 
-        input[type="submit"] {
-            width: 350px;
-            height: 50px;
-            font-size: 18px;
-            background-color: #b7e1ff;
-            color: #000000;
-        }
-    </style>
-</head>
+            input[type="submit"] {
+                width: 350px;
+                height: 50px;
+                font-size: 18px;
+                background-color: #d0a8ff;
+                color: #000000;
+            }
+        </style>
+    </head>
 
 <body>
 
-<h1>Задание к лекции. Вариант 1</h1>
-<h2>Магнитное поле катушек Гельмгольца. Визуализация графика B(x)</h2>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-3">
-            <form id="graphForm">
-                <h3>Токи (расположение и величина): </h3>
-                <div class="row align-items-center">
-                    <div class="col-lg-1">
-                        <input class="form-check-input" type="checkbox" id="checkbox1" aria-label="..." checked disabled>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="form-floating mb-2">
-                            <input class="form-control" id="amperage1" name="amperage" placeholder="#" value="-1" />
-                            <label for="amperage1">Сила тока (A)</label>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-floating mb-2">
-                            <input class="form-control" id="coordinates1" name="coordinates" placeholder="#" value="30 30" />
-                            <label for="coordinates1">Координаты (x, y)</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row align-items-center">
-                    <div class="col-lg-1">
-                        <input class="form-check-input" type="checkbox" id="checkbox2" aria-label="..." checked>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="form-floating mb-2">
-                            <input class="form-control" id="amperage2" name="amperage" placeholder="#" value="1" />
-                            <label for="amperage2">Сила тока (A)</label>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-floating mb-2">
-                            <input class="form-control" id="coordinates2" name="coordinates" placeholder="#" value="30 70" />
-                            <label for="coordinates2">Координаты (x, y)</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row align-items-center">
-                    <div class="col-lg-1">
-                        <input class="form-check-input" type="checkbox" id="checkbox3" aria-label="..." checked>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="form-floating mb-2">
-                            <input class="form-control" id="amperage3" name="amperage" placeholder="#" value="1" />
-                            <label for="amperage3">Сила тока (A)</label>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-floating mb-2">
-                            <input class="form-control" id="coordinates3" name="coordinates" placeholder="#" value="70 30" />
-                            <label for="coordinates3">Координаты (x, y)</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row align-items-center">
-                    <div class="col-lg-1">
-                        <input class="form-check-input" type="checkbox" id="checkbox4" aria-label="..." checked>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="form-floating mb-2">
-                            <input class="form-control" id="amperage4" name="amperage" placeholder="#" value="-1" />
-                            <label for="amperage4">Сила тока (A)</label>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form-floating mb-2">
-                            <input class="form-control" id="coordinates4" name="coordinates" placeholder="#" value="70 30" />
-                            <label for="coordinates4">Координаты (x, y)</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion" id="accord">
-
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accord">
-                        <div class="accordion-body">
-                            <div class="form-floating mb-2">
-                                <input class="form-control" id="vectorsCount" name="vectorsCount" placeholder="#" value="60" />
-                                <label for="vectorsCount">Количество </label>
-                            </div>
-                            <div class="form-floating">
-                                <input class="form-control" id="vectorLength" name="vectorLength" placeholder="#" value="10" />
-                                <label for="vectorLength">Длина</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button id="drawButton" data-mdb-ripple-init type="submit" class="btn btn-primary">
-                    Готово
-                </button>
-        </div>
-        <div class="col-lg-9" id="graph">
-            <script src="../Task3/src/build-graph.js"></script>
+<!-- Navbar -->
+<nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="../index.html#hero">
+            <img class="logo" src="../../images/atom_3767686.png" /> ФОКиСТ
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link active" href="../index.html#hero">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html#projects">Задания после лекции</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Семинары</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html#contact">Контакты</a></li>
+            </ul>
         </div>
     </div>
-</div>
-</body>
-
-</html>
+</nav>
+<!-- End Navbar -->
 
 
+
+<!-- Hero section -->
+<section id="hero1" style="margin-top: 150px;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>3. Магнитное поле в веществе - Вариант 1</h1>
+                <h6>Моделирование магнитного поля, создаваемого прямыми токами (с первой лекции).</h6>
+                <p class="card-text"><small class="text-muted">Открыто с: вторник, 27 февраля 2024, 11:35 <br> Закрыто c: вторник, 5 марта 2024, 11:55</small></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Hero section -->
+
+<!-- задание после лекции №1 section -->
+<section id="projects3">
+    <div class="container">
+        <h4>Условие задачи</h4>
+        <p><strong>Входные параметры:</strong> величина и расположение токов в двумерном
+            пространстве.<br>
+            <strong>Итоговый вид модели:</strong> : Исполняемая модель, интегрируемая в html документ,
+            на которой показан вид (линии) магнитного поля в двумерном пространстве,
+            создаваемого несколькими токами (N<5).  <br>
+        </p>
+    </div> <br>
+
+    <div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <form id="graphForm">
+                    <h3>Токи (расположение и величина): </h3>
+                    <div class="row align-items-center">
+                        <div class="col-lg-1">
+                            <input class="form-check-input" type="checkbox" id="checkbox1" aria-label="..." checked disabled>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" id="amperage1" name="amperage" placeholder="#" value="-1" />
+                                <label for="amperage1">Сила тока (A)</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" id="coordinates1" name="coordinates" placeholder="#" value="30 30" />
+                                <label for="coordinates1">Координаты (x, y)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-lg-1">
+                            <input class="form-check-input" type="checkbox" id="checkbox2" aria-label="..." checked>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" id="amperage2" name="amperage" placeholder="#" value="1" />
+                                <label for="amperage2">Сила тока (A)</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" id="coordinates2" name="coordinates" placeholder="#" value="30 70" />
+                                <label for="coordinates2">Координаты (x, y)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-lg-1">
+                            <input class="form-check-input" type="checkbox" id="checkbox3" aria-label="..." checked>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" id="amperage3" name="amperage" placeholder="#" value="1" />
+                                <label for="amperage3">Сила тока (A)</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" id="coordinates3" name="coordinates" placeholder="#" value="70 30" />
+                                <label for="coordinates3">Координаты (x, y)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-lg-1">
+                            <input class="form-check-input" type="checkbox" id="checkbox4" aria-label="..." checked>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" id="amperage4" name="amperage" placeholder="#" value="-1" />
+                                <label for="amperage4">Сила тока (A)</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-floating mb-2">
+                                <input class="form-control" id="coordinates4" name="coordinates" placeholder="#" value="70 30" />
+                                <label for="coordinates4">Координаты (x, y)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion" id="accord">
+
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accord">
+                            <div class="accordion-body">
+                                <div class="form-floating mb-2">
+                                    <input class="form-control" id="vectorsCount" name="vectorsCount" placeholder="#" value="60" />
+                                    <label for="vectorsCount">Количество </label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="vectorLength" name="vectorLength" placeholder="#" value="10" />
+                                    <label for="vectorLength">Длина</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="drawButton" data-mdb-ripple-init type="submit" class="btn btn-primary">
+                        Готово
+                    </button>
+            </div>
+            <div class="col-lg-9" id="graph">
+                <script src="../Task3/src/build-graph.js"></script>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- задание после лекции №1 section end -->
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -198,5 +253,39 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
+
+
+<!-- Contact section -->
+<section id="contact" style="margin-top: 50px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col">
+                <h1>Контакты</h1>
+                <h5>Гонос Анна M3204</h5>
+                <p>ITMO University  |  Software Engineering</p>
+
+            </div>
+        </div>
+    </div>
+    <a href="https://github.com/AnnaGonos/IS-PhysicsModeling-4sem" target="_blank" class="mr-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-github text-white" viewBox="0 0 16 16" >
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+        </svg>
+    </a>
+
+    <a href="https://t.me/gonosanna" target="_blank" class="mr-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-telegram text-white" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
+        </svg>
+    </a>
+
+</section>
+<!-- End Contact section -->
+
+
 </body>
 </html>
+
+
+
+

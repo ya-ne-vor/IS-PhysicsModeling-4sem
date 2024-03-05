@@ -18,7 +18,7 @@ function MyFunction(){
     var i_end = RadiusCoils + 1;
 
 
-    for(var i = i_start; i < i_end; i += 0.0001)
+    for(var i = i_start; i < i_end; i += 0.001)
     {
         x.push(i);
         y.push(MagneticFieldInduction(RadiusCoils, Math.abs(RadiusCoils - i), CurrentValue, NumberTurns)
