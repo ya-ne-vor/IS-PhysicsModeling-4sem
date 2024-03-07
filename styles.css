@@ -93,6 +93,7 @@ input[type="number"] {
     background-color: #f8f9fa;
 
 }
+
 input[type="submit"] {
     width: 150px;
     height: 50px;
@@ -102,3 +103,4 @@ input[type="submit"] {
     background-color: #dec8ff;
     font-size: 15px;
 }
+
