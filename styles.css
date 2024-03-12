@@ -104,3 +104,6 @@ input[type="submit"] {
     font-size: 15px;
 }
 
+.container2 {
+    column-count: 3;
+}
