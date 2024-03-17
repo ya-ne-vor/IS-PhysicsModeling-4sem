@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Physics Course</title>
+    <script src="../../library/plotly.min.js" ></script>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" href="../../images/atom_3767686.png">
+    <!-- JavaScript and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<!-- Navbar -->
+<nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="../../index.html">
+            <img class="logo" src="../../images/atom_3767686.png" href="../../index.html" /> ФОКиСТ
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link active" href="../../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../index.html#projects">Задания после лекции</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Семинары</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End Navbar -->
+
+
+
+<!-- Hero section -->
+<section id="hero1" style="margin-top: 150px;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Задание к лекции 5. Явление самоиндукции. Уравнения Максвелла. Вариант 1.</h1>
+                <br>
+                <h2>Моделирование. Замыкание/размыкание цепи.</h2> <br>
+
+                <p class="card-text"><small class="text-muted">Открыто с: четверг, 14 марта 2024, 00:00<br>Срок сдачи: четверг, 21 марта 2024, 15:00</small></p>
+            </div>
+        </div>
+    </div>
+    <br> <br><br>
+    <div class="container">
+        <h3>Условие задачи</h3>
+        <strong>Входные параметры:</strong>  индуктивность, сопротивление, ЭДС источника тока.  <br>
+        <strong>Итоговый вид модели:</strong> индуктивность, сопротивление, ЭДС источника тока.
+
+    </div> <br> <br>
+    <div class="container">
+        <h4>Решение</h4><br>
+        <i>Экстратоки самоиндукции</i> – дополнительные токи за счет возникновения ЭДС самоиндукции при всяком изменении силы тока в цепи. Они направлены противоположно току, создаваемому источником. При выключении источника тока экстратоки имеют такое же направление, что и ослабевающий ток. Следовательно, наличие индуктивности в цепи приводит к замедлению исчезновения или установления тока в цепи.
+        <br><i>Ток при размыкании цепи</i>. Рассмотрим процесс выключения тока в цепи с индуктивностью, сопротивлением и источником тока.
+
+        <br> <img src="../../images/htmlconvd-XhdqwB_html_d637d523a0d0a760.gif"><br>
+
+
+        В цепи течет постоянный ток <img src="../../images/5.1.gif" name="Object148" align="absmiddle" width="50" height="38">.
+        В момент времени <i>t</i> = 0 отключим источник тока. Ток  в катушке <i>L</i> начнет уменьшаться, что приведет к  возникновению ЭДС самоиндукции <img src="../../images/5.2.gif" name="Object149" align="absmiddle" width="77" height="38">,которая препятствует уменьшению тока. В каждый момент времени ток в цепи определяется законом Ома
+        <img src="../../images/5.3.gif" name="Object150" align="absmiddle" width="46" height="41">
+        или <img src="../../images/5.4.gif" name="Object151" align="absmiddle" width="81" height="38">
+
+        <br> Разделим переменные и получим:
+
+            <img src="../../images/5.5.gif" name="Object152" align="absmiddle" width="83" height="38">
+
+            Проинтегрируем это уравнение по <i>I</i> (от
+            <img src="../../images/5.51.gif" name="Object153" align="absmiddle" width="20" height="21"> до <i>I</i>)
+            и <i>t</i> (от 0 до <i>t</i>) и получим выражение для <i>тока при размыкании цепи</i>:
+
+        <img src="../../images/5.6.gif" name="Object154" align="absmiddle" width="86" height="41"> или <img src="../../images/5.7.gif" name="Object155" align="absmiddle" width="125" height="42">.
+
+        <br> Сила тока при размыкании цепи убывает по экспоненциальному закону.<br>
+        <img src="../../images/5.8.gif" name="Object156" align="absmiddle" width="44" height="38"> – <i>время релаксации</i> – время, за которое сила тока уменьшается в <i>e</i> раз.<b> </b>Чем больше индуктивность цепи и меньше ее сопротивление, тем больше τ и, следовательно, тем медленнее уменьшается ток в цепи при ее размыкании. <br><br>
+        <p align="center">
+            <img src="../../images/5.9.gif">
+        </p>
+        Контур, содержащий индуктивность нельзя резко размыкать, так как это приводит к появлению значительных ЭДС самоиндукции  и может привести  к пробою изоляции и выводу из строя измерительных приборов. Если в контур сопротивление вводить постепенно, то ЭДС самоиндукции не достигнет больших значений.
+<br>
+        <i>Ток при замыкании цепи. </i>При замыкании цепи наряду с ЭДС возникает ЭДС самоиндукции,препятствующая возрастанию тока. По закону Ома:
+
+            <img src="../../images/5.10.gif" name="Object158" align="absmiddle" width="70" height="21">
+            или <img src="../../images/5.11.gif" name="Object159" align="absmiddle" width="90" height="38">.<br>
+
+
+            Решением этого уравнения является выражение:
+        <p align="center">
+            <img src="../../images/5.12.gif" name="Object160" align="absmiddle" width="102" height="37">
+            </p>
+
+<br><br>
+        Таким образом, я буду использовать 2 следующие формулы: <br>
+        1) Для замыкания: <img src="../../images/5.12.gif" name="Object155" align="absmiddle" width="125" height="42"> <br>
+        2) Для размыкания: <img src="../../images/5.7.gif" name="Object160" align="absmiddle" width="102" height="37"> <br>
+
+
+        <br>
+        <h5>Визуализация</h5> <br>
+
+        <form id = "main-form" onsubmit="return MyFunction(this)" method ="post">
+            <!--Входные параметры: радиус катушек, количество витков в катушках, величина тока.-->
+            <label>Индуктивность [Гн]:</label>
+            <input type="range" min="0" max="100" oninput="document.getElementById('rangeValLabel3').innerHTML = this.value;" step="0.1" id="L">
+            <em id="rangeValLabel3" style="font-style: normal;"></em>
+            <br><br>
+
+            <label>Сопротивление [Ом]:</label>
+            <input type="range" min="0" max="1000" oninput="document.getElementById('rangeValLabel2').innerHTML = this.value;" step="1" id="R">
+            <em id="rangeValLabel2" style="font-style: normal;"></em>
+            <br><br>
+
+            <label>ЭДС источника [В]:</label>
+            <input  type="range" min="0" max="100" oninput="document.getElementById('rangeValLabel1').innerHTML = this.value;" step="0.1" id="E">
+            <em id="rangeValLabel1" style="font-style: normal;"></em>
+            <br><br>
+
+
+
+
+            <input type="submit" name="submit" value="Готово">
+        </form>
+
+
+        <div id="myDiv_1"></div>
+        <div id="myDiv_2"></div>
+        <script src="Task5JS.js"></script>
+
+    </div>
+</section>
+<!-- End Hero section -->
+
+<!-- задание после лекции №1 section -->
+<section id="projects2">
+
+</section>
+<!-- задание после лекции №1 section end -->
+
+
+
+
+<!-- Contact section -->
+<section id="contact" style="margin-top: 50px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col">
+                <h1>Контакты</h1>
+                <h5>Гонос Анна M3204</h5>
+                <p>ITMO University  |  Software Engineering</p>
+
+            </div>
+        </div>
+    </div>
+    <a href="https://github.com/AnnaGonos/IS-PhysicsModeling-4sem" target="_blank" class="mr-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-github text-white" viewBox="0 0 16 16" >
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+        </svg>
+    </a>
+
+    <a href="https://t.me/gonosanna" target="_blank" class="mr-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-telegram text-white" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
+        </svg>
+    </a>
+
+</section>
+<!-- End Contact section -->
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
