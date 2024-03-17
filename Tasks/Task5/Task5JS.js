@@ -77,7 +77,7 @@ function MyFunction(){
             x: t,
             y: Disconnect,
             line: {
-                color: '#683aa4' // Цвет линии - фиолетовый
+                color: '#00b713' // Цвет линии - фиолетовый
             }
         }],
         layout_2
