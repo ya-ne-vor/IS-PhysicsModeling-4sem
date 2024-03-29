@@ -16,9 +16,7 @@ function MyFunction(){
         t.push(i);
         Connect.push(E/R*(1-Math.exp(-R/L*i)));
         Disconnect.push(E/R*Math.exp(-R/L*i));
-
-        if (E/R*Math.exp(-R/L*i) < 0.00001)
-            break;
+        if (E/R*Math.exp(-R/L*i) < 0.00001) break;
     }
 
     let layout_1 = {
@@ -30,6 +28,7 @@ function MyFunction(){
                 fontWeight: 'lighter'
             }
         },
+
         xaxis: {
             title: 'Время t (c)'
         },
@@ -62,9 +61,6 @@ function MyFunction(){
             type: 'scatter',
             x: t,
             y: Connect,
-            line: {
-                color: '#683aa4' // Цвет линии - фиолетовый
-            }
         }],
         layout_1
     );
@@ -76,9 +72,6 @@ function MyFunction(){
             type: 'scatter',
             x: t,
             y: Disconnect,
-            line: {
-                color: '#00b713' // Цвет линии - фиолетовый
-            }
         }],
         layout_2
     );
